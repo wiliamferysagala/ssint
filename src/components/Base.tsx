@@ -1,11 +1,11 @@
 import { cn } from "@/lib/util";
 import React from "react";
 
-export default function Base({ children }: { children: React.ReactNode }) {
+const Base = ({ children }: { children: React.ReactNode }) => {
   return (
     <div
       className={cn(
-        "w-full min-h-screen",
+        "min-h-screen w-full",
         "flex justify-center items-center",
         "bg-[#0088ff]",
         "text-white font-bold text-2xl"
@@ -14,4 +14,6 @@ export default function Base({ children }: { children: React.ReactNode }) {
       {children}
     </div>
   );
-}
+};
+
+export default Base;

@@ -1,9 +1,11 @@
 import Base from "@/components/Base";
 
-export default function HomePage() {
+const HomePage = () => {
   return (
     <Base>
       <h1>SsintDev</h1>
     </Base>
   );
-}
+};
+
+export default HomePage;
