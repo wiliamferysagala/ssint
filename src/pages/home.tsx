@@ -1,7 +1,9 @@
+import Base from "@/components/Base";
+
 export default function HomePage() {
   return (
-    <div className="min-h-screen w-full flex justify-center items-center">
-      Hello World
-    </div>
+    <Base>
+      <h1>SsintDev</h1>
+    </Base>
   );
 }
