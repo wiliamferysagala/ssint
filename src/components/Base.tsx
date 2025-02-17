@@ -20,7 +20,7 @@ const Base = ({ children }: { children: ReactNode }) => {
         'relative',
         'overflow-hidden',
         'text-fourth',
-        'snap-none'
+        'snap-none '
       )}
     >
       <Header />

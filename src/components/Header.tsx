@@ -1,10 +1,60 @@
 import { cn } from '@/lib/util'
+import { motion } from 'motion/react'
 import { Link, useLocation } from 'react-router-dom'
 
 const Header = () => {
   return (
     <header className={cn('w-full', 'flex justify-between', 'px-5 py-3')}>
-      <h1 className="text-2xl">SsintDev</h1>
+      <h1 className="text-2xl">
+        <motion.span
+          initial={{ scale: 1, x: -1000 }}
+          animate={{ scale: 2, x: 0, transition: { duration: 1 } }}
+        >
+          S
+        </motion.span>
+        <motion.span
+          initial={{ scale: 1, x: -1000 }}
+          animate={{ scale: 2, x: 0, transition: { duration: 1.2 } }}
+        >
+          s
+        </motion.span>
+        <motion.span
+          initial={{ scale: 1, x: -1000 }}
+          animate={{ scale: 2, x: 0, transition: { duration: 1.3 } }}
+        >
+          i
+        </motion.span>
+        <motion.span
+          initial={{ scale: 1, x: -1000 }}
+          animate={{ scale: 2, x: 0, transition: { duration: 1.4 } }}
+        >
+          n
+        </motion.span>
+        <motion.span
+          initial={{ scale: 1, x: -1000 }}
+          animate={{ scale: 2, x: 0, transition: { duration: 1.5 } }}
+        >
+          t
+        </motion.span>
+        <motion.span
+          initial={{ scale: 1, x: -1000 }}
+          animate={{ scale: 2, x: 0, transition: { duration: 1.6 } }}
+        >
+          D
+        </motion.span>
+        <motion.span
+          initial={{ scale: 1, x: -1000 }}
+          animate={{ scale: 2, x: 0, transition: { duration: 1.7 } }}
+        >
+          e
+        </motion.span>
+        <motion.span
+          initial={{ scale: 1, x: -1000 }}
+          animate={{ scale: 2, x: 0, transition: { duration: 1.8 } }}
+        >
+          v
+        </motion.span>
+      </h1>
       <nav>
         <ul className="flex gap-5">
           <LinkItems to="/">Home</LinkItems>
@@ -13,6 +63,12 @@ const Header = () => {
           <LinkItems to="/project">Project</LinkItems>
         </ul>
       </nav>
+      <motion.button
+        className="size-8 rounded-full bg-third"
+        whileHover={{ scale: 1.5 }}
+        whileTap={{ scale: 1 }}
+        onClick={() => console.log('clicked')}
+      ></motion.button>
     </header>
   )
 }
@@ -36,8 +92,13 @@ const LinkItems = ({ children, to }: { children: string; to: string }) => {
   ]
 
   return (
-    <li className={cn(to === location.pathname ? local : notLocal)}>
+    <motion.li
+      className={cn(to === location.pathname ? local : notLocal)}
+      initial={{ transform: 'translateX(-100px)' }}
+      animate={{ transform: 'translateX(0px)' }}
+      transition={{ type: 'spring' }}
+    >
       <Link to={`${to}`}>{children}</Link>
-    </li>
+    </motion.li>
   )
 }
